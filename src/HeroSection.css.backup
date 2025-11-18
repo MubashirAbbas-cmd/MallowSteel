@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hero-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #e8d5c4;
+  position: relative;
+  overflow: hidden;
+  padding-top: 90px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 80px;
+  gap: 100px;
+}
+
+.image-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 600px;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+.text-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+  padding-left: 50px;
+}
+
+.brand-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 90px;
+  font-weight: 400;
+  color: #5a5a5a;
+  margin-bottom: 30px;
+  letter-spacing: 3px;
+  line-height: 1.1;
+}
+
+.tagline {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: #5a5a5a;
+  letter-spacing: 8px;
+  margin-bottom: 60px;
+}
+
+.shop-button {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #5a5a5a;
+  background-color: transparent;
+  border: 2px solid #5a5a5a;
+  padding: 18px 60px;
+  cursor: pointer;
+  letter-spacing: 3px;
+  transition: all 0.4s ease;
+  border-radius: 2px;
+}
+
+.shop-button:hover {
+  background-color: #5a5a5a;
+  color: #e8d5c4;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.logo-circle {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #3a5a5a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.logo-circle:hover {
+  transform: scale(1.1);
+}
+
+.logo-circle span {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  color: #e8d5c4;
+  font-weight: 400;
+}
+
+@media (max-width: 1024px) {
+  .hero-content {
+    flex-direction: column;
+    padding: 40px;
+    gap: 60px;
+  }
+
+  .text-section {
+    padding-left: 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  .brand-name {
+    font-size: 70px;
+  }
+
+  .tagline {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .brand-name {
+    font-size: 50px;
+  }
+
+  .tagline {
+    font-size: 14px;
+    letter-spacing: 5px;
+  }
+
+  .shop-button {
+    padding: 15px 45px;
+    font-size: 13px;
+  }
+
+  .logo-circle {
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    left: 30px;
+  }
+
+  .logo-circle span {
+    font-size: 28px;
+  }
+}
