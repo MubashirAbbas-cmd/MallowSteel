@@ -9,7 +9,7 @@ const HeroSection = () => {
           <img src="/jewelry-image.jpg" alt="Jewelry" className="hero-image" />
         </div>
         <div className="text-section">
-          <h1 className="brand-name">Abbas</h1>
+          <h1 className="brand-name">Mallow Steel</h1>
           <p className="tagline">ELEGANCE</p>
           <button className="shop-button">SHOP NOW</button>
         </div>
