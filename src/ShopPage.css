@@ -16,7 +16,7 @@
   position: relative;
   overflow: hidden;
   margin-top: 80px;
-  animation: gradientShift 15s ease infinite;
+  /* animation: gradientShift 15s ease infinite; */
 }
 
 @keyframes gradientShift {
@@ -164,7 +164,7 @@
 }
 
 .filter-btn:hover {
-  color: #d4af37;
+  color: #020202;
   background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0.05) 100%);
   border-color: rgba(212, 175, 55, 0.4);
   transform: translateX(5px);
