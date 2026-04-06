@@ -1,8 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useCart } from './CartContext';
 import './Header.css';
 
 const Header = () => {
+  const { cartCount, setCartOpen } = useCart();
+  const navigate = useNavigate();
+
+  const goToCategory = (category) => {
+    navigate(`/shop?category=${category}`);
+  };
+
   return (
     <header className="header">
       <div className="header-content">
@@ -24,10 +32,10 @@ const Header = () => {
               CATEGORIES <span className="dropdown-arrow">▼</span>
             </span>
             <div className="dropdown-menu">
-              <Link to="/shop">Rings</Link>
-              <Link to="/shop">Necklaces</Link>
-              <Link to="/shop">Bracelets</Link>
-              <Link to="/shop">Earrings</Link>
+              <button onClick={() => goToCategory('rings')}>Rings</button>
+              <button onClick={() => goToCategory('necklaces')}>Necklaces</button>
+              <button onClick={() => goToCategory('bracelets')}>Bracelets</button>
+              <button onClick={() => goToCategory('earrings')}>Earrings</button>
             </div>
           </div>
           <Link to="/about" className="nav-link">ABOUT US</Link>
@@ -36,7 +44,15 @@ const Header = () => {
 
         <div className="header-icons">
           <button className="icon-btn">🔍</button>
-          <button className="icon-btn">🛒</button>
+          <button className="icon-btn cart-btn" onClick={() => {
+            navigate('/shop');
+            setTimeout(() => setCartOpen(true), 100);
+          }}>
+            🛒
+            {cartCount > 0 && (
+              <span className="cart-badge">{cartCount}</span>
+            )}
+          </button>
           <button className="icon-btn">👤</button>
         </div>
       </div>

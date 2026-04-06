@@ -43,17 +43,12 @@
   gap: 15px;
   animation: fadeInLeft 0.8s ease forwards;
   flex-shrink: 0;
+  text-decoration: none;
 }
 
 @keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 .logo-circle {
@@ -133,14 +128,8 @@
 }
 
 @keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .nav-link {
@@ -245,17 +234,6 @@
   transform: translateX(-50%) translateY(0);
 }
 
-@keyframes dropdownSlide {
-  from {
-    opacity: 0;
-    transform: translateX(-50%) translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
-}
-
 .dropdown-menu::before {
   content: '';
   position: absolute;
@@ -270,43 +248,28 @@
   filter: drop-shadow(0 -2px 4px rgba(0, 0, 0, 0.1));
 }
 
-.dropdown-menu a {
+.dropdown-menu button {
   display: block;
+  width: calc(100% - 20px);
   padding: 14px 30px;
   font-family: 'Montserrat', sans-serif;
   font-size: 13px;
   color: #4a4a4a;
-  text-decoration: none;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   margin: 4px 10px;
   border-radius: 8px;
 }
 
-.dropdown-menu a::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 0;
-  height: 60%;
-  background: linear-gradient(135deg, #d4af37 0%, #c9a432 100%);
-  transition: width 0.3s ease;
-  border-radius: 0 4px 4px 0;
-  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
-}
-
-.dropdown-menu a:hover {
+.dropdown-menu button:hover {
   background: linear-gradient(90deg, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0.05) 100%);
   color: #d4af37;
   padding-left: 45px;
-  transform: translateX(5px);
   box-shadow: 0 4px 15px rgba(212, 175, 55, 0.1);
-}
-
-.dropdown-menu a:hover::before {
-  width: 4px;
 }
 
 .header-icons {
@@ -320,14 +283,8 @@
 }
 
 @keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 .icon-btn {
@@ -348,25 +305,7 @@
     0 4px 15px rgba(0, 0, 0, 0.05),
     inset 0 1px 0 rgba(255, 255, 255, 0.3);
   position: relative;
-  overflow: hidden;
-}
-
-.icon-btn::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, transparent 70%);
-  transform: translate(-50%, -50%);
-  transition: width 0.4s ease, height 0.4s ease;
-}
-
-.icon-btn:hover::before {
-  width: 200%;
-  height: 200%;
+  overflow: visible;
 }
 
 .icon-btn:hover {
@@ -384,40 +323,46 @@
   transform: translateY(-2px) scale(1);
 }
 
+/* Cart Badge */
+.cart-btn {
+  position: relative;
+  overflow: visible;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, #d4af37, #c9a432);
+  color: #2a2a2a;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #e8d5c4;
+  animation: badgePop 0.3s ease;
+  z-index: 10;
+}
+
+@keyframes badgePop {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}
+
 @media (max-width: 1024px) {
-  .header-content {
-    padding: 0 40px;
-  }
-
-  .nav {
-    gap: 25px;
-  }
-
-  .nav-link {
-    font-size: 11px;
-  }
+  .header-content { padding: 0 40px; }
+  .nav { gap: 25px; }
+  .nav-link { font-size: 11px; }
 }
 
 @media (max-width: 768px) {
-  .header-content {
-    padding: 0 20px;
-  }
-
-  .nav {
-    display: none;
-  }
-
-  .logo-text {
-    font-size: 20px;
-  }
-
-  .logo-circle {
-    width: 42px;
-    height: 42px;
-  }
-
-  .icon-btn {
-    width: 36px;
-    height: 36px;
-  }
+  .header-content { padding: 0 20px; }
+  .nav { display: none; }
+  .logo-text { font-size: 20px; }
+  .logo-circle { width: 42px; height: 42px; }
+  .icon-btn { width: 36px; height: 36px; }
 }
